@@ -1,6 +1,6 @@
 # Pun-Intended
 
-Learn Ruby with puns.  :laughing:
+Learn Ruby with puns. :insert frying-pan: 
 
 ## Collaborators:
 
