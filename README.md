@@ -8,7 +8,7 @@ Learn Ruby with puns. :insert frying-pan:
 
 ## Technologies used
 
-`Ruby` `Sinatra` `Postgres`
+`Ruby` `Sinatra` `RSpec` `Bundler` `ActiveRecord` `Rake`
 
 ## Setting up
 
@@ -16,11 +16,15 @@ Learn Ruby with puns. :insert frying-pan:
 
 2. Install dependencies: `$ bundle`
 
-3. Run the app: `$ ruby app.rb`
+3. Create the databases: `$ rake db:create`
 
-4. Navigate to [http://localhost:4567/](http://localhost:4567/)
+4. Create the tables: `$ rake db:migrate`
 
-Use `$ rspec` to run tests
+5. Run the app: `$ ruby app.rb`
+
+6. Navigate to [http://localhost:4567/](http://localhost:4567/)
+
+Use `$ rspec` to :running: tests
 
 ## LICENSE
 
