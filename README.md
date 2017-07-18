@@ -6,7 +6,7 @@ Learn Ruby with puns. :insert frying-pan:
 
 `Newton Kiragu` `Andrew Kiburei` `Edward Mudaida`
 
-## Technologies use
+## Technologies used
 
 `Ruby` `Sinatra` `Postgres`
 
