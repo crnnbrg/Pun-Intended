@@ -1,16 +1,16 @@
-# Pun-Intended
+# Pun Intended
 
-Learn Ruby with puns. :insert frying-pan:
+A CRUD application featuring programming related puns. :insert frying-pan:
 
-## Collaborators:
+## Collaborators
 
 `Newton Karanu` `Andrew Kiburei` `Edward Mudaida` `George Karanu`
 
 ## Technologies used
 
-`Ruby` `Sinatra` `RSpec` `Bundler` `ActiveRecord` `Rake` `Postgres`
+`Ruby` `Sinatra` `RSpec` `ActiveRecord` `Rake` `Postgres` `MaterializeCSS`
 
-## Setting up
+## Running the project
 
 1. Clone the repo: `$ git clone [URL]`
 
@@ -29,3 +29,7 @@ Use `$ rspec` to :running: tests
 ## LICENSE
 
 [MIT LICENSE](https://github.com/EdwardMudaida/Pun-Intended/blob/master/LICENSE)
+
+## Acknowledgments
+
+[Moses Okemwa](https://github.com/mussaimo)
