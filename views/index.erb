@@ -1,11 +1,19 @@
 <% if @puns.any? %>
-  <p>The day's pun</p>
+  <h3 class="center-align">The day's pun</h3>
   <% @puns.each do |pun| %>
     <li>
-      <%= pun.pun %>
-        <button type="submit" name="button">upvote</button>
-        <button type="submit" name="button">downvote</button>
-        <button type="submit" name="button">blond moment</button>
+      <div class="container pun-container">
+        <h1 class="center-align"><%= pun.pun %></h1>
+        <li><a class="btn-floating green" href="/puns/<%=pun.id%>"><i class="material-icons">edit</i></a></li>
+        <form action="/puns/<%= pun.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <li>
+            <button class="btn-floating red" type="submit"><i class="material-icons">delete_forever</i></button>
+          </li>
+        </form>
+        <div class="submit-btn">
+          <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+        </div>
     </li>
     <% end %>
       <% else %>
