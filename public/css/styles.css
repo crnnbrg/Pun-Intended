@@ -10,3 +10,7 @@
      width: 65%;
      margin: auto;
  }
+
+ li {
+     list-style-type: none;
+ }
