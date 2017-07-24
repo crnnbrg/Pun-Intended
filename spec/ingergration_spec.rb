@@ -2,9 +2,13 @@ require('spec_helper')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-describe('showing the landing page', {:type => :feature}) do
-  it"shows the landing page on opening the website" do
+
+describe('adding a new pun', {:type => :feature}) do
+  it('allows a user to add a new pun') do
     visit('/')
-    expect(page).to have_content('index')
+    fill_in('pun_body', :with =>'Frank says put this in your pipe and smoke it')
+    fill_in('user_name', :with =>'Frank Sinatra')
+    click_button('Submit')
+    expect(page).to have_content('Frank says put this in your pipe and smoke it')
   end
 end
