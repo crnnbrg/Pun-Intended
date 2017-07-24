@@ -8,7 +8,7 @@ get '/' do
 end
 
 post '/puns' do
-  @pun = Pun.new(pun: params.fetch('pun'), upvote: nil, downvote: nil, author_id: nil)
+  @pun = Pun.new(pun: params.fetch('pun_body'), upvote: nil, downvote: nil, author_id: params.fetch('user_name'))
   if @pun.save
     redirect '/'
   else
