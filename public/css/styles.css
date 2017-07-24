@@ -1,0 +1,12 @@
+ body {
+     font-size: 18px;
+ }
+
+ .submit-btn {
+     text-align: center;
+ }
+
+ .input-field {
+     width: 65%;
+     margin: auto;
+ }
