@@ -9,6 +9,11 @@
         <input type="text" name="pun_body" id="pun_body" value="<%= pun.pun %>">
         <button type="submit" name="button">Edit</button>
       </form>
+      <!-- Delete pun -->
+      <form action="/puns/<%= pun.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" name="button">Delete</button>
+      </form>
       <button type="submit" name="button">upvote</button>
       <button type="submit" name="button">downvote</button>
       <button type="submit" name="button">blond moment</button>

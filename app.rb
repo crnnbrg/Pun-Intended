@@ -22,6 +22,12 @@ patch '/puns/:id' do
   redirect '/'
 end
 
+delete '/puns/:id' do
+  @pun = Pun.find(params.fetch('id').to_i)
+  @pun.destroy
+  redirect '/'
+end
+
 get '/error' do
   erb(:error)
 end
