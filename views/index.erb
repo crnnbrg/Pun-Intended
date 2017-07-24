@@ -3,6 +3,12 @@
   <% @puns.each do |pun| %>
     <li>
       <%= pun.pun %>
+      <!-- Edit Pun -->
+      <form action="/puns/<%= pun.id %>" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <input type="text" name="pun_body" id="pun_body" value="<%= pun.pun %>">
+        <button type="submit" name="button">Edit</button>
+      </form>
       <button type="submit" name="button">upvote</button>
       <button type="submit" name="button">downvote</button>
       <button type="submit" name="button">blond moment</button>
