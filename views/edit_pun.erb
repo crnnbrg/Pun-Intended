@@ -1,0 +1,10 @@
+<form action="/puns/<%= pun.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <div class="input-field">
+        <label>Pun Body</label>
+        <input type="text" name="pun_body" id="pun_body" required value="<%= pun.pun %>">
+    </div>
+    <div class="submit-btn">
+        <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+    </div>
+</form>
