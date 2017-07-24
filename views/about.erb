@@ -1,0 +1,23 @@
+<h4 class="center-align">The Philosophy of Pun Intended</h4>
+<p class="flow-text center-align">joy = 1</p>
+<p class="flow-text center-align">pun == wet?: joy =+ 1</p>
+<!-- Add Pun Modal -->
+<div id="new_pun" class="modal">
+    <div class="modal-content">
+        <h4 class="center-align">NEW PUN</h4>
+        <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
+        <form action="/puns" method="post">
+            <div class="input-field">
+                <label>Pun Body</label>
+                <input type="text" name="pun_body" id="pun_body" required>
+            </div>
+            <div class="input-field">
+                <label>Chef</label>
+                <input type="text" name="user_name" id="user_name" required>
+            </div>
+            <div class="submit-btn">
+                <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
