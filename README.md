@@ -1,14 +1,14 @@
 # Pun-Intended
 
-Learn Ruby with puns. :insert frying-pan: 
+Learn Ruby with puns. :insert frying-pan:
 
 ## Collaborators:
 
-`Newton Kiragu` `Andrew Kiburei` `Edward Mudaida`
+`Newton Karanu` `Andrew Kiburei` `Edward Mudaida` `George Karanu`
 
 ## Technologies used
 
-`Ruby` `Sinatra` `RSpec` `Bundler` `ActiveRecord` `Rake`
+`Ruby` `Sinatra` `RSpec` `Bundler` `ActiveRecord` `Rake` `Postgres`
 
 ## Setting up
 
