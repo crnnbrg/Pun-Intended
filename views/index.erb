@@ -3,31 +3,31 @@
   <% @puns.each do |pun| %>
     <li>
       <%= pun.pun %>
-      <button type="submit" name="button">upvote</button>
-      <button type="submit" name="button">downvote</button>
-      <button type="submit" name="button">blond moment</button>
+        <button type="submit" name="button">upvote</button>
+        <button type="submit" name="button">downvote</button>
+        <button type="submit" name="button">blond moment</button>
     </li>
-  <% end %>
-<% else %>
-  <p>no puns but dont panic! yet...</p>
-<% end %>
-<!-- Add Pun Modal -->
-<div id="new_pun" class="modal">
-    <div class="modal-content">
-        <h4 class="center-align">NEW PUN</h4>
-        <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
-        <form action="/puns" method="post">
-            <div class="input-field">
-                <label>Pun Body</label>
-                <input type="text" name="pun_body" id="pun_body" required>
+    <% end %>
+      <% else %>
+        <p>no puns but dont panic! yet...</p>
+        <% end %>
+          <!-- Add Pun Modal -->
+          <div id="new_pun" class="modal">
+            <div class="modal-content">
+              <h4 class="center-align">NEW PUN</h4>
+              <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
+              <form action="/puns" method="post">
+                <div class="input-field">
+                  <label>Pun Body</label>
+                  <input type="text" name="pun_body" id="pun_body" required>
+                </div>
+                <div class="input-field">
+                  <label>Chef</label>
+                  <input type="text" name="user_name" id="user_name" required>
+                </div>
+                <div class="submit-btn">
+                  <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+                </div>
+              </form>
             </div>
-            <div class="input-field">
-                <label>Chef</label>
-                <input type="text" name="user_name" id="user_name" required>
-            </div>
-            <div class="submit-btn">
-                <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
-</div>
+          </div>
