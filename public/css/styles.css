@@ -1,21 +1,27 @@
- body {
-     font-size: 18px;
- }
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+body {
+    font-size: 18px;
+    font-family: 'Source Code Pro', monospace;
+}
 
- .submit-btn {
-     text-align: center;
- }
+.submit-btn {
+    text-align: center;
+}
 
- .input-field {
-     width: 65%;
-     margin: auto;
- }
+.input-field {
+    width: 65%;
+    margin: auto;
+}
 
- li {
-     list-style-type: none;
- }
+li {
+    list-style-type: none;
+}
 
- .pun-container {
-     margin-bottom: 20%;
-     margin-top: 10%;
- }
+.pun-container {
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+.menu-btn {
+    display: inline-block;
+}
