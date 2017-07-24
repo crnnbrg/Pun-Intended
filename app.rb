@@ -16,6 +16,18 @@ post '/puns' do
   end
 end
 
+patch '/puns/:id' do
+  @pun = Pun.find(params.fetch('id').to_i)
+  @pun.update(pun: params.fetch('pun_body'))
+  redirect '/'
+end
+
+delete '/puns/:id' do
+  @pun = Pun.find(params.fetch('id').to_i)
+  @pun.destroy
+  redirect '/'
+end
+
 get '/error' do
   erb(:error)
 end
