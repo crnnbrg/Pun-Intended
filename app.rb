@@ -16,12 +16,12 @@ post '/puns' do
   end
 end
 
-get '/puns/:id/' do
+get '/puns/:id' do
   @pun = Pun.find(params.fetch('id').to_i)
-  erb(:edit_pun)
+  erb(:pun)
 end
 
-patch '/puns/:id' do
+patch '/puns/:id/edit' do
   @pun = Pun.find(params.fetch('id').to_i)
   @pun.update(pun: params.fetch('pun_body'))
   redirect '/'
@@ -35,4 +35,8 @@ end
 
 get '/error' do
   erb(:error)
+end
+
+get '/about' do
+  erb(:about)
 end
