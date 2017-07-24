@@ -1,0 +1,13 @@
+<% if @puns.any? %>
+  <p>The day's pun</p>
+  <% @puns.each do |pun| %>
+    <li>
+      <%= pun.pun %>
+      <button type="submit" name="button">upvote</button>
+      <button type="submit" name="button">downvote</button>
+      <button type="submit" name="button">blond moment</button>
+    </li>
+  <% end %>
+<% else %>
+  <p>no puns but dont panic! yet...</p>
+<% end %>
