@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: pun_dev
+
+test:
+  adapter: postgresql
+  database: pun_test
