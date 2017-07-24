@@ -16,6 +16,11 @@ post '/puns' do
   end
 end
 
+get '/puns/:id/' do
+  @pun = Pun.find(params.fetch('id').to_i)
+  erb(:edit_pun)
+end
+
 patch '/puns/:id' do
   @pun = Pun.find(params.fetch('id').to_i)
   @pun.update(pun: params.fetch('pun_body'))
