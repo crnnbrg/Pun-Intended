@@ -1,44 +1,55 @@
 <% if @puns.any? %>
-  <p>The day's pun</p>
-  <% @puns.each do |pun| %>
-    <li>
-      <%= pun.pun %>
-      <!-- Edit Pun -->
-      <form action="/puns/<%= pun.id %>" method="post">
-        <input type="hidden" name="_method" value="patch">
-        <input type="text" name="pun_body" id="pun_body" value="<%= pun.pun %>">
-        <button type="submit" name="button">Edit</button>
-      </form>
-      <!-- Delete pun -->
-      <form action="/puns/<%= pun.id %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button type="submit" name="button">Delete</button>
-      </form>
-      <button type="submit" name="button">upvote</button>
-      <button type="submit" name="button">downvote</button>
-      <button type="submit" name="button">blond moment</button>
-    </li>
-  <% end %>
-<% else %>
-  <p>no puns but dont panic! yet...</p>
-<% end %>
-<!-- Add Pun Modal -->
-<div id="new_pun" class="modal">
-    <div class="modal-content">
-        <h4 class="center-align">NEW PUN</h4>
-        <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
-        <form action="/puns" method="post">
-            <div class="input-field">
-                <label>Pun Body</label>
-                <input type="text" name="pun_body" id="pun_body" required>
-            </div>
-            <div class="input-field">
-                <label>Chef</label>
-                <input type="text" name="user_name" id="user_name" required>
-            </div>
-            <div class="submit-btn">
-                <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
-</div>
+    <h3 class="center-align">The day's pun</h3>
+    <% @puns.each do |pun| %>
+        <li>
+            <%= pun.pun %>
+                <!-- Edit Pun -->
+                <form action="/puns/<%= pun.id %>" method="post">
+                    <input type="hidden" name="_method" value="patch">
+                    <input type="text" name="pun_body" id="pun_body" value="<%= pun.pun %>">
+                    <button type="submit" name="button">Edit</button>
+                </form>
+                <!-- Delete pun -->
+                <form action="/puns/<%= pun.id %>" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <button type="submit" name="button">Delete</button>
+                </form>
+                <div class="submit-btn">
+                    <a class="tooltipped btn-floating btn-large waves-effect waves-light yellow" data-position="top" data-delay="50" data-tooltip="Upvote"><i class="material-icons black-text">sentiment_very_satisfied</i></a>
+                    <a class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="bottom" data-delay="50" data-tooltip="Downvote"><i class="material-icons black-text">sentiment_very_dissatisfied</i></a>
+                    <a class="tooltipped btn-floating btn-large waves-effect waves-light green" data-position="right" data-delay="50" data-tooltip="Blond Moment"><i class="material-icons black-text">sentiment_neutral</i></a>
+                </div>
+        </li>
+        <% end %>
+            <% else %>
+                <p>no puns but dont panic! yet...</p>
+                <% end %>
+                    <!-- Add Pun Modal -->
+                    <div id="new_pun" class="modal">
+                        <div class="modal-content">
+                            <h4 class="center-align">NEW PUN</h4>
+                            <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
+                            <form action="/puns" method="post">
+                                <div class="input-field">
+                                    <label>Pun Body</label>
+                                    <input type="text" name="pun_body" id="pun_body" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Chef</label>
+                                    <input type="text" name="user_name" id="user_name" required>
+                                </div>
+                                <div class="submit-btn">
+                                    <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="fixed-action-btn horizontal click-to-toggle">
+                        <a class="btn-floating btn-large red">
+      <i class="material-icons">menu</i>
+    </a>
+                        <ul>
+                            <li><a class="btn-floating green"><i class="material-icons">edit</i></a></li>
+                            <li><a class="btn-floating red"><i class="material-icons">delete_forever</i></a></li>
+                        </ul>
+                    </div>
