@@ -6,7 +6,7 @@ A CRUD application featuring programming related puns. :insert frying-pan:
 
 ## Technologies used
 
-[`Ruby`](https://www.ruby-lang.org/en/) [`Sinatra`](http://www.sinatrarb.com/) [`RSpec`](http://rspec.info/) [`ActiveRecord`](http://guides.rubyonrails.org/active_record_basics.html) [`Postgres`](https://www.postgresql.org/) [`Materialize`](materializecss.com) [`Rake`](https://github.com/ruby/rake)
+[`Ruby`](https://www.ruby-lang.org/en/) [`Sinatra`](http://www.sinatrarb.com/) [`RSpec`](http://rspec.info/) [`ActiveRecord`](http://guides.rubyonrails.org/active_record_basics.html) [`Postgres`](https://www.postgresql.org/) [`Materialize`](http://materializecss.com/) [`Rake`](https://github.com/ruby/rake)
 
 ## Running the project
 
