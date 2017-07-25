@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724112909) do
+ActiveRecord::Schema.define(version: 20170724154148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "puns", force: :cascade do |t|
     t.string "pun"
-    t.string "upvote", default: "0"
-    t.string "downvote", default: "0"
+    t.integer "upvote", default: 0
+    t.integer "downvote", default: 0
     t.string "author_id"
+    t.integer "blonde", default: 0
   end
 
 end
