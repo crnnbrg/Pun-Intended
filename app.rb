@@ -9,7 +9,7 @@ get '/' do
 end
 
 post '/puns' do
-  @pun = Pun.new(pun: params.fetch('pun_body'), upvote: nil, downvote: nil, author_id: params.fetch('user_name'), category: params.fetch('category'), category_id: params.fetch('category_id'))
+  @pun = Pun.new(pun: params.fetch('pun_body'), upvote: nil, downvote: nil, author_id: params.fetch('user_name'), category_id: params.fetch('category_id'))
   if @pun.save
     redirect '/'
   else
@@ -17,9 +17,9 @@ post '/puns' do
   end
 end
 post '/categories' do
-  @category = Category.new(:category, params.fetch('category_body'))
+  @category = Category.new(category: params.fetch('category_body'))
   if @category.save
-    redirect '/'
+    redirect '/category'
   else
     redirect '/error'
   end
@@ -32,6 +32,7 @@ end
 
 get '/categories/:id' do
   @category = Category.find(params.fetch('id').to_i)
+  @puns = Pun.all
   erb(:category)
 end
 
@@ -69,5 +70,6 @@ get '/about' do
 end
 
 get '/category' do
+  @categories = Category.all
   erb(:category)
 end
