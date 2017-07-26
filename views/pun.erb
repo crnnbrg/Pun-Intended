@@ -1,46 +1,47 @@
 <div class="container">
-    <h1 class="center-align"><%=@pun.pun%></h1>
-    <form action="/puns/<%= @pun.id %>" method="post" class="menu-btn">
-        <input type="hidden" name="_method" value="delete">
-        <button class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Delete" type="submit"><i class="material-icons">delete_forever</i></button>
-    </form>
-    <a class="tooltipped btn-floating waves-effect waves-light green menu-btn" data-position="bottom" data-delay="50" data-tooltip="Edit" href="#edit_pun" modal-trigger><i class="material-icons">edit</i></a>
+  <h1><strong>Category:</strong><em><%=@category.category %></em></h1>
+  <hr>
+  <h1 class="center-align"><%=@pun.pun%></h1>
+  <form action="/puns/<%= @pun.id %>" method="post" class="menu-btn">
+    <input type="hidden" name="_method" value="delete">
+    <button class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Delete" type="submit"><i class="material-icons">delete_forever</i></button>
+  </form>
+  <a class="tooltipped btn-floating waves-effect waves-light green menu-btn" data-position="bottom" data-delay="50" data-tooltip="Edit" href="#edit_pun" modal-trigger><i class="material-icons">edit</i></a>
 </div>
 <!-- Edit Pun Modal -->
 <div id="edit_pun" class="modal">
-    <div class="modal-content">
-        <h4 class="center-align">NEW PUN</h4>
-        <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
-        <form action="/puns/<%=@pun.id%>/edit" method="post">
-            <input type="hidden" name="_method" value="patch">
-            <div class="input-field">
-                <label>Pun Body</label>
-                <input type="text" name="pun_body" id="pun_body" required value="<%=@pun.pun%>">
-            </div>
-            `
-            <div class="submit-btn">
-                <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
+  <div class="modal-content">
+    <h4 class="center-align">NEW PUN</h4>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
+    <form action="/puns/<%=@pun.id%>/edit" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <div class="input-field">
+        <label>Pun Body</label>
+        <input type="text" name="pun_body" id="pun_body" required value="<%=@pun.pun%>">
+      </div>
+      <div class="submit-btn">
+        <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
 </div>
 <!-- Add Pun Modal -->
 <div id="new_pun" class="modal">
-    <div class="modal-content">
-        <h4 class="center-align">NEW PUN</h4>
-        <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
-        <form action="/puns" method="post">
-            <div class="input-field">
-                <label>Pun Body</label>
-                <input type="text" name="pun_body" id="pun_body" required>
-            </div>
-            <div class="input-field">
-                <label>Chef</label>
-                <input type="text" name="user_name" id="user_name" required>
-            </div>
-            <div class="submit-btn">
-                <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
+  <div class="modal-content">
+    <h4 class="center-align">NEW PUN</h4>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
+    <form action="/puns" method="post">
+      <div class="input-field">
+        <label>Pun Body</label>
+        <input type="text" name="pun_body" id="pun_body" required>
+      </div>
+      <div class="input-field">
+        <label>Chef</label>
+        <input type="text" name="user_name" id="user_name" required>
+      </div>
+      <div class="submit-btn">
+        <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
 </div>

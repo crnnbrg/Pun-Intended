@@ -65,6 +65,7 @@ end
 
 get '/puns/:id' do
   @pun = Pun.find(params.fetch('id').to_i)
+  @category = Category.find(params.fetch('id').to_i)
   erb(:pun)
 end
 
@@ -76,6 +77,7 @@ get '/categories/:id' do
 end
 
 patch '/puns/:id/edit' do
+  @category = Category.find(params.fetch('id').to_i)
   @pun = Pun.find(params.fetch('id').to_i)
   @pun.update(pun: params.fetch('pun_body'))
   redirect '/'
@@ -88,6 +90,7 @@ patch '/categories/:id/edit' do
 end
 
 delete '/puns/:id' do
+  @category = Category.find(params.fetch('id').to_i)
   @pun = Pun.find(params.fetch('id').to_i)
   @pun.destroy
   redirect '/'
@@ -117,7 +120,8 @@ delete '/categories/:id' do
   @category = Category.find(params.fetch('id').to_i)
   @pun = Pun.find(params.fetch('id').to_i)
   @category.destroy
-  redirect '/'
+  @pun.destroy
+  redirect '/category'
 end
 
 get '/error' do
