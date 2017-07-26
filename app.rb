@@ -4,7 +4,7 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get '/' do
   @puns = Pun.all
-  @category = Category.all
+  @categories = Category.all
   erb(:index)
 end
 
