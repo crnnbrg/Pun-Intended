@@ -1,0 +1,42 @@
+<% if @category.pun().any?() %>
+  <h5>Here are the puns under the category <%= @category.category %></h5>
+  <h3>Here are all the Puns in this Category:</h3>
+  <ul>
+    <% @category.pun().each() do |pun| %>
+      <li>
+        <div class="container pun-container">
+          <a href="/puns/<%=pun.id%>" class="black-text"><h3 class="center-align"><%= pun.pun %></h3></a>
+          <div class="submit-btn">
+            <div class="row">
+              <div class="col s4">
+                <form action="/puns/<%= pun.id %>/upvote" method="post">
+                  <input type="hidden" name="_method" value="patch">
+                  <%= pun.upvote %>
+                    <button type="submit" class="tooltipped btn-floating btn-large waves-effect waves-light yellow" data-position="top" data-delay="50" data-tooltip="Upvote"><i class="em em-joy"></i></button>
+                </form>
+              </div>
+              <div class="col s4">
+                <form action="/puns/<%= pun.id %>/downvote" method="post">
+                  <input type="hidden" name="_method" value="patch">
+                  <%= pun.downvote %>
+                    <button class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="bottom" data-delay="50" data-tooltip="Downvote">
+                      <i class="em em-angry"></i></button>
+                </form>
+              </div>
+              <div class="col s4">
+                <form action="/puns/<%= pun.id %>/blonde" method="post">
+                  <input type="hidden" name="_method" value="patch">
+                  <%= pun.blonde %>
+                    <button class="tooltipped btn-floating btn-large waves-effect waves-light green" data-position="right" data-delay="50" data-tooltip="Blonde"><i class="em em-confused"></i></a>
+                    </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          </h1>
+      </li>
+  </ul>
+  <% end %>
+    <% else %>
+      <h5>There are no puns on this category. Dont panic yet though</h5>
+      <% end %>
