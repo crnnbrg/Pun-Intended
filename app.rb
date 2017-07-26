@@ -32,8 +32,9 @@ end
 
 get '/categories/:id' do
   @category = Category.find(params.fetch('id').to_i)
+  @categories = Category.all
   @puns = Pun.all
-  erb(:category)
+  erb(:pun_list)
 end
 
 patch '/puns/:id/edit' do
