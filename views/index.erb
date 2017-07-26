@@ -1,3 +1,5 @@
+<%= @user.username %>
+<a href="/user/logout"><button class="btn" name="button">Logout</button></a>
 <% if @puns.any? %>
   <h3 class="center-align teal-text">Code related puns</h3>
   <% @puns.each do |pun| %>

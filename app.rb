@@ -1,11 +1,49 @@
 require 'bundler/setup'
+require 'sinatra/base'
 Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
+also_reload '../lib/**/*.rb'
+enable :sessions
+# warden
 
 get '/' do
-  @puns = Pun.all
-  @categories = Category.all
-  erb(:index)
+  if session[:id] != nil
+    @user = User.find(session[:id])
+    if session[:id] == @user.id
+      @user = User.find(session[:id])
+      @puns = Pun.all
+      @categories = Category.all
+      erb(:index)
+    end
+  else
+    erb(:register)
+  end
+end
+
+
+post '/user/signup' do
+  @user = User.new(username: params.fetch('username'), email: params.fetch('email'), password: params.fetch('password'))
+  if @user.save
+    session[:id] = @user.id
+    redirect '/'
+  else
+    erb(:register)
+  end
+end
+
+post '/user/login' do
+
+  if @user = User.find_by(username: params.fetch('username'))
+    session[:id] = @user.id
+    redirect '/'
+  else
+    erb(:register)
+  end
+end
+
+get '/user/logout' do
+  session.clear
+  redirect '/'
 end
 
 post '/puns' do
