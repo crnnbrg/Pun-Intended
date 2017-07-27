@@ -1,48 +1,28 @@
 <a class="btn waves-effect waves-light green" href="#new_category" modal-trigger>New Category</a>
 <% @categories.each do |category| %>
-  <li>
-    <div class="container category-container">
-      <a href="/categories/<%=category.id%>" class="black-text"><h3 class="center-align"><%=category.category %></h3></a>
-      </h1>
-  </li>
-  <form action="/categories/<%=category.id%>" method="post" class="menu-btn">
-    <input type="hidden" name="_method" value="delete">
-    <button class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Delete" type="submit"><i class="material-icons">delete_forever</i></button>
-  </form>
-  <% end %>
-    <!-- Add Category Modal -->
-    <div id="new_category" class="modal">
-      <div class="modal-content">
-        <h4 class="center-align">NEW Category</h4>
-        <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
-        <form action="/categories" method="post">
-          <div class="input-field">
-            <label>Category</label>
-            <input type="text" name="category_body" id="category_body" required>
-          </div>
-          <div class="submit-btn">
-            <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- Add Pun Modal -->
-    <div id="new_pun" class="modal">
-      <div class="modal-content">
-        <h4 class="center-align">NEW PUN</h4>
-        <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
-        <form action="/puns" method="post">
-          <div class="input-field">
-            <label>Pun Body</label>
-            <input type="text" name="pun_body" id="pun_body" required>
-          </div>
-          <div class="input-field">
-            <label>Chef</label>
-            <input type="text" name="user_name" id="user_name" required>
-          </div>
-          <div class="submit-btn">
-            <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
-    </div>
+    <li>
+        <div class="container category-container">
+            <a href="/categories/<%=category.id%>" class="black-text"><h3 class="center-align"><%=category.category %></h3></a>
+            </h1>
+    </li>
+    <form action="/categories/<%=category.id%>" method="post" class="menu-btn">
+        <input type="hidden" name="_method" value="delete">
+        <button class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Delete" type="submit"><i class="material-icons">delete_forever</i></button>
+    </form>
+    <% end %>
+        <!-- Add Category Modal -->
+        <div id="new_category" class="modal">
+            <div class="modal-content">
+                <h4 class="center-align">NEW Category</h4>
+                <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
+                <form action="/categories" method="post">
+                    <div class="input-field">
+                        <label>Category</label>
+                        <input type="text" name="category_body" id="category_body" required>
+                    </div>
+                    <div class="submit-btn">
+                        <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
