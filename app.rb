@@ -47,7 +47,8 @@ get '/user/logout' do
 end
 
 post '/puns' do
-  @pun = Pun.new(pun: params.fetch('pun_body'), author_id: params.fetch('user_name'), category_id: params.fetch('category_id'))
+  user = User.find(params.fetch('user_id').to_i)
+  @pun = Pun.new(pun: params.fetch('pun_body'), category_id: params.fetch('category_id'), user_id: user.id)
   if @pun.save
     redirect '/'
   else
@@ -76,7 +77,7 @@ get '/puns/:id' do
     erb(:register)
   end
   @pun = Pun.find(params.fetch('id').to_i)
-  @category = Category.find(params.fetch('id').to_i)
+  @category = Category.find(@pun.category_id)
   erb(:pun)
 end
 
@@ -112,7 +113,6 @@ patch '/categories/:id/edit' do
 end
 
 delete '/puns/:id' do
-  @category = Category.find(params.fetch('id').to_i)
   @pun = Pun.find(params.fetch('id').to_i)
   @pun.destroy
   redirect '/'
