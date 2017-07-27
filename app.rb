@@ -47,7 +47,8 @@ get '/user/logout' do
 end
 
 post '/puns' do
-  @pun = Pun.new(pun: params.fetch('pun_body'), author_id: params.fetch('user_name'), category_id: params.fetch('category_id'))
+  user = User.find(params.fetch('user_id').to_i)
+  @pun = Pun.new(pun: params.fetch('pun_body'), category_id: params.fetch('category_id'), user_id: user.id)
   if @pun.save
     redirect '/'
   else
