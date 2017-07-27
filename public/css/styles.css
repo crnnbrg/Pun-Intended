@@ -47,3 +47,7 @@ nav .brand-logo,
 nav ul a {
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+.progress {
+    background-color: red;
+}
