@@ -64,12 +64,34 @@ post '/categories' do
 end
 
 get '/puns/:id' do
+  if session[:id] != nil
+    @user = User.find(session[:id])
+    if session[:id] == @user.id
+      @user = User.find(session[:id])
+      @puns = Pun.all
+      @categories = Category.all
+      erb(:index)
+    end
+  else
+    erb(:register)
+  end
   @pun = Pun.find(params.fetch('id').to_i)
   @category = Category.find(params.fetch('id').to_i)
   erb(:pun)
 end
 
 get '/categories/:id' do
+  if session[:id] != nil
+    @user = User.find(session[:id])
+    if session[:id] == @user.id
+      @user = User.find(session[:id])
+      @puns = Pun.all
+      @categories = Category.all
+      erb(:index)
+    end
+  else
+    erb(:register)
+  end
   @category = Category.find(params.fetch('id').to_i)
   @categories = Category.all
   @puns = Pun.all
@@ -118,21 +140,54 @@ patch '/puns/:id/blonde' do
 end
 delete '/categories/:id' do
   @category = Category.find(params.fetch('id').to_i)
-  @pun = Pun.find(params.fetch('id').to_i)
-  @category.destroy
+  # @pun = Pun.find(params.fetch('id').to_i)
+  # @category.destroy
   @pun.destroy
   redirect '/category'
 end
 
 get '/error' do
+  if session[:id] != nil
+    @user = User.find(session[:id])
+    if session[:id] == @user.id
+      @user = User.find(session[:id])
+      @puns = Pun.all
+      @categories = Category.all
+      erb(:index)
+    end
+  else
+    erb(:register)
+  end
   erb(:error)
 end
 
 get '/about' do
+  if session[:id] != nil
+    @user = User.find(session[:id])
+    if session[:id] == @user.id
+      @user = User.find(session[:id])
+      @puns = Pun.all
+      @categories = Category.all
+      erb(:index)
+    end
+  else
+    erb(:register)
+  end
   erb(:about)
 end
 
 get '/category' do
+  if session[:id] != nil
+    @user = User.find(session[:id])
+    if session[:id] == @user.id
+      @user = User.find(session[:id])
+      @puns = Pun.all
+      @categories = Category.all
+      erb(:index)
+    end
+  else
+    erb(:register)
+  end
   @categories = Category.all
   erb(:category)
 end
