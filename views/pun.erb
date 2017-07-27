@@ -1,5 +1,11 @@
 <div class="container">
-    <h1><strong>Category:</strong><em><%=@category.category %></em></h1>
+    <br>
+    <div class="row">
+        <p>Category: </p>
+        <div class="chip">
+            <%=@category.category %>
+        </div>
+    </div>
     <hr>
     <h1 class="center-align"><%=@pun.pun%></h1>
     <form action="/puns/<%= @pun.id %>" method="post" class="menu-btn">
@@ -28,25 +34,25 @@
 <!-- Add Pun Modal -->
 <div id="new_pun" class="modal">
     <div class="modal-content">
-        <h4 class="center-align">NEW PUN</h4>
-        <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
-        <form action="/puns" method="post">
-            <input type="hidden" name="user_id" id="user_id" value="<%= @user.id %>">
-            <label for="category_id">Select a Category</label>
-            <select id="category_id" name="category_id" type="text" class="browser-default">
-                <% @categories.each do |category| %>
-                    <option value="<%= category.id()%>">
-                        <%= category.category %>
-                    </option>
-                    <% end %>
-            </select>
-            <div class="input-field">
-                <label>Pun Body</label>
-                <input type="text" name="pun_body" id="pun_body" required>
-            </div>
-            <div class="submit-btn">
+        <h4 class="center-align">New Pun</h4>
+        <input type="hidden" name="user_id" id="user_id" value="<%= @user.id %>">
+        <select id="category_id" name="category_id" type="text" class="browser-default">
+            <% @categories.each do |category| %>
+                <option value="<%= category.id()%>">
+                    <%= category.category %>
+                </option>
+                <% end %>
+        </select>
+        <br>
+        <div class="input-field">
+            <label>Pun Body</label>
+            <input type="text" name="pun_body" id="pun_body" required>
+        </div>
+        <div class="submit-btn">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
+            <form action="/puns" method="post">
                 <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
-            </div>
+        </div>
         </form>
     </div>
 </div>

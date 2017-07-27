@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 body {
-    font-size: 18px;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
 }
 
 .submit-btn {
@@ -26,4 +30,20 @@ li {
 
 .center-page {
     margin-top: 22%;
+}
+
+select {
+    width: 65%;
+    margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+nav .brand-logo,
+nav ul a {
+    font-family: 'Roboto Condensed', sans-serif;
 }

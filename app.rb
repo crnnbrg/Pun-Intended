@@ -141,8 +141,8 @@ end
 delete '/categories/:id' do
   @category = Category.find(params.fetch('id').to_i)
   # @pun = Pun.find(params.fetch('id').to_i)
-  # @category.destroy
-  @pun.destroy
+  @category.destroy
+  # @pun.destroy
   redirect '/category'
 end
 
