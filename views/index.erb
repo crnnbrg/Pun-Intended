@@ -5,7 +5,11 @@
   <% @puns.each do |pun| %>
     <li>
       <div class="container pun-container">
-        <a href="/puns/<%=pun.id%>" class="black-text"><h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3></a>
+        <% if session[:id] == pun.user_id %>
+            <a href="/puns/<%=pun.id%>" class="black-text"><h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3></a>
+          <% else %>
+            <h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3>
+        <% end %>
         <div class="submit-btn">
           <div class="row">
             <div class="col s4">

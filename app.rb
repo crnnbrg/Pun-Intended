@@ -66,7 +66,7 @@ end
 
 get '/puns/:id' do
   @pun = Pun.find(params.fetch('id').to_i)
-  @category = Category.find(params.fetch('id').to_i)
+  @category = Category.find(@pun.category_id)
   erb(:pun)
 end
 
@@ -91,7 +91,6 @@ patch '/categories/:id/edit' do
 end
 
 delete '/puns/:id' do
-  @category = Category.find(params.fetch('id').to_i)
   @pun = Pun.find(params.fetch('id').to_i)
   @pun.destroy
   redirect '/'
