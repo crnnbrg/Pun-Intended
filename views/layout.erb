@@ -27,9 +27,11 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="#new_pun" modal-trigger>New Pun</a></li>
                         <li><a href="/category" modal-trigger>Category</a></li>
-                    <li>
-    <%= @user.username %>
-</li>
+                        <li>
+                            <% if session[:id] != nil %>
+                                <%= @user.username %>
+                                    <% end %>
+                        </li>
                         <li>
                             <a href="/user/logout">
                                 <button class="btn" name="button">Logout</button>
