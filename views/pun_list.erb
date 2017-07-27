@@ -1,74 +1,74 @@
 <% if @category.pun().any?() %>
-    <h5>Here are the puns under the category <%= @category.category %></h5>
-    <h3>Here are all the Puns in this Category:</h3>
-    <ul>
-        <% @category.pun().each() do |pun| %>
-            <li>
-                <div class="container pun-container">
-                    <a href="/puns/<%=pun.id%>" class="black-text"><h3 class="center-align"><%= pun.pun %></h3></a>
-                    <div class="submit-btn">
-                        <div class="row">
-                            <div class="col s4">
-                                <form action="/puns/<%= pun.id %>/upvote" method="post">
-                                    <input type="hidden" name="_method" value="patch">
-                                    <%= pun.upvote %>
-                                        <button type="submit" class="tooltipped btn-floating btn-large waves-effect waves-light yellow" data-position="top" data-delay="50" data-tooltip="Upvote"><i class="em em-joy"></i></button>
-                                </form>
-                            </div>
-                            <div class="col s4">
-                                <form action="/puns/<%= pun.id %>/downvote" method="post">
-                                    <input type="hidden" name="_method" value="patch">
-                                    <%= pun.downvote %>
-                                        <button class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="bottom" data-delay="50" data-tooltip="Downvote">
-                                            <i class="em em-angry"></i></button>
-                                </form>
-                            </div>
-                            <div class="col s4">
-                                <form action="/puns/<%= pun.id %>/blonde" method="post">
-                                    <input type="hidden" name="_method" value="patch">
-                                    <%= pun.blonde %>
-                                        <button class="tooltipped btn-floating btn-large waves-effect waves-light green" data-position="right" data-delay="50" data-tooltip="Blonde"><i class="em em-confused"></i></a>
-                                        </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    </h1>
-            </li>
-    </ul>
-    <% end %>
-        <% else %>
-            <h5>There are no puns on this category. Dont panic yet though</h5>
-            <% end %>
-                <!-- Add Pun Modal -->
-                <div id="new_pun" class="modal">
-                    <div class="modal-content">
-                        <h4 class="center-align">NEW PUN</h4>
-                        <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
-                        <form action="/puns" method="post">
-                            <input type="hidden" name="user_id" id="user_id" value="<%= @user.id %>">
-                            <label for="category_id">Select a Category</label>
-                            <select id="category_id" name="category_id" type="text" class="browser-default">
-                                <% @categories.each do |category| %>
-                                    <option value="<%= category.id()%>">
-                                        <%= category.category %>
-                                    </option>
-                                    <% end %>
-                            </select>
-                            <div class="input-field">
-                                <label>Pun Body</label>
-                                <input type="text" name="pun_body" id="pun_body" required>
-                            </div>
-                            <div class="submit-btn">
-                                <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
-                            </div>
+<h5>Here are the puns under the category <%= @category.category %></h5>
+<h3>Here are all the Puns in this Category:</h3>
+<ul>
+    <% @category.pun().each() do |pun| %>
+    <li>
+        <div class="container pun-container">
+            <a href="/puns/<%=pun.id%>" class="black-text"><h3 class="center-align"><%= pun.pun %></h3></a>
+            <div class="submit-btn">
+                <div class="row">
+                    <div class="col s4">
+                        <form action="/puns/<%= pun.id %>/upvote" method="post">
+                            <input type="hidden" name="_method" value="patch">
+                            <%= pun.upvote %>
+                            <button type="submit" class="tooltipped btn-floating btn-large waves-effect waves-light yellow" data-position="top" data-delay="50" data-tooltip="Upvote"><i class="em em-joy"></i></button>
                         </form>
                     </div>
+                    <div class="col s4">
+                        <form action="/puns/<%= pun.id %>/downvote" method="post">
+                            <input type="hidden" name="_method" value="patch">
+                            <%= pun.downvote %>
+                            <button class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="bottom" data-delay="50" data-tooltip="Downvote">
+                            <i class="em em-angry"></i></button>
+                        </form>
+                    </div>
+                    <div class="col s4">
+                        <form action="/puns/<%= pun.id %>/blonde" method="post">
+                            <input type="hidden" name="_method" value="patch">
+                            <%= pun.blonde %>
+                        <button class="tooltipped btn-floating btn-large waves-effect waves-light green" data-position="right" data-delay="50" data-tooltip="Blonde"><i class="em em-confused"></i></a>
+                        </button>
+                    </form>
                 </div>
-                <!-- Add Pun Modal -->
-                <div id="new_pun" class="modal">
-                    <div class="modal-content">
-                     <!-- Add Pun Modal -->
+            </div>
+        </div>
+        </h1>
+    </li>
+</ul>
+<% end %>
+<% else %>
+<h5>There are no puns on this category. Dont panic yet though</h5>
+<% end %>
+<!-- Add Pun Modal -->
+<div id="new_pun" class="modal">
+    <div class="modal-content">
+        <h4 class="center-align">NEW PUN</h4>
+        <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
+        <form action="/puns" method="post">
+            <input type="hidden" name="user_id" id="user_id" value="<%= @user.id %>">
+            <label for="category_id">Select a Category</label>
+            <select id="category_id" name="category_id" type="text" class="browser-default">
+                <% @categories.each do |category| %>
+                <option value="<%= category.id()%>">
+                    <%= category.category %>
+                </option>
+                <% end %>
+            </select>
+            <div class="input-field">
+                <label>Pun Body</label>
+                <input type="text" name="pun_body" id="pun_body" required>
+            </div>
+            <div class="submit-btn">
+                <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Add Pun Modal -->
+<div id="new_pun" class="modal">
+    <div class="modal-content">
+        <!-- Add Pun Modal -->
         <div id="new_pun" class="modal">
             <div class="modal-content">
                 <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
@@ -76,10 +76,10 @@
                 <input type="hidden" name="user_id" id="user_id" value="<%= @user.id %>">
                 <select id="category_id" name="category_id" type="text" class="browser-default">
                     <% @categories.each do |category| %>
-                        <option value="<%= category.id()%>">
-                            <%= category.category %>
-                        </option>
-                        <% end %>
+                    <option value="<%= category.id()%>">
+                        <%= category.category %>
+                    </option>
+                    <% end %>
                 </select>
                 <br>
                 <div class="input-field">
@@ -89,7 +89,7 @@
                 <div class="submit-btn">
                     <form action="/puns" method="post">
                         <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
-                </div>
+                    </div>
                 </form>
             </div>
         </div>
