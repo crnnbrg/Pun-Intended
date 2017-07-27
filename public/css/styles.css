@@ -27,3 +27,7 @@ li {
 .center-page {
     margin-top: 22%;
 }
+
+.progress {
+  background-color: red;
+}
