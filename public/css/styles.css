@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 body {
     font-size: 18px;
-    font-family: 'Source Code Pro', monospace;
 }
 
 .submit-btn {
@@ -24,4 +22,8 @@ li {
 
 .menu-btn {
     display: inline-block;
+}
+
+.center-page {
+    margin-top: 25%;
 }
