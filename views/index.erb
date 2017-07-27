@@ -1,5 +1,5 @@
 <% if @puns.any? %>
-    <h3 class="center-align teal-text">Code related puns</h3>
+    <!-- <h3 class="center-align teal-text">Code related puns</h3> -->
     <% @puns.each do |pun| %>
         <li>
             <div class="container pun-container">
@@ -10,22 +10,22 @@
                             <form action="/puns/<%= pun.id %>/upvote" method="post">
                                 <input type="hidden" name="_method" value="patch">
                                 <%= pun.upvote %>
-                                    <button type="submit" class="tooltipped btn-floating btn-large waves-effect waves-light yellow" data-position="top" data-delay="50" data-tooltip="Upvote"><i class="em em-joy"></i></button>
+                                    <button type="submit" class="tooltipped btn-floating btn-small waves-effect waves-light yellow" data-position="top" data-delay="50" data-tooltip="Upvote"><i class="material-icons"> <%= pun.upvote %></i></button>
                             </form>
                         </div>
                         <div class="col s4">
                             <form action="/puns/<%= pun.id %>/downvote" method="post">
                                 <input type="hidden" name="_method" value="patch">
                                 <%= pun.downvote %>
-                                    <button class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="bottom" data-delay="50" data-tooltip="Downvote">
-                                        <i class="em em-angry"></i></button>
+                                    <button class="tooltipped btn-floating btn-small waves-effect waves-light red" data-position="bottom" data-delay="50" data-tooltip="Downvote">
+                                        <i class="material-icons"></i></button>
                             </form>
                         </div>
                         <div class="col s4">
                             <form action="/puns/<%= pun.id %>/blonde" method="post">
                                 <input type="hidden" name="_method" value="patch">
                                 <%= pun.blonde %>
-                                    <button class="tooltipped btn-floating btn-large waves-effect waves-light green" data-position="right" data-delay="50" data-tooltip="Blonde"><i class="em em-confused"></i></a>
+                                    <button class="tooltipped btn-floating btn-small waves-effect waves-light green" data-position="right" data-delay="50" data-tooltip="Blonde"><i class="material-icons"></i></a>
                                     </button>
                             </form>
                         </div>
