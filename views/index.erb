@@ -1,14 +1,14 @@
 <% if @puns.any? %>
     <h3 class="center-align teal-text">Code related puns</h3>
-    <% @puns.each do |pun| %>
+    <% @puns.reverse.each do |pun| %>
         <li>
             <div class="container pun-container">
-                <% if session[:id] == pun.user_id %>
-                    <a href="/puns/<%=pun.id%>" class="black-text"><h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3>
-                    </a>
+                              <% if session[:id] == pun.user_id %>
+                      <a href="/puns/<%=pun.id%>" class="black-text"><h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3>
+                      </a>
                     <% else %>
-                        <h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3>
-                        <% end %>
+                      <h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3>
+                      <% end %>
                             <div class="submit-btn">
                                 <div class="row">
                                     <div class="col s4">
@@ -29,6 +29,7 @@
                                     <div class="col s4">
                                         <form action="/puns/<%= pun.id %>/blonde" method="post">
                                             <input type="hidden" name="_method" value="patch">
+                                            <input type="hidden" name="user_id" id="user_id" value="<%= session[:id] %>">
                                             <%= pun.blonde %>
                                                 <button class="tooltipped btn-floating btn-large waves-effect waves-light green" data-position="right" data-delay="50" data-tooltip="Blonde"><i class="em em-confused"></i></a>
                                                 </button>
@@ -36,6 +37,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="progress">
+                              <% score = (pun.upvote.to_f / (pun.upvote.to_f + pun.downvote.to_f) * 100) %>
+                              <div class="determinate" style="width: <%= score %>%"></div>
+                            </div>
+
                             </h1>
         </li>
         <% end %>
