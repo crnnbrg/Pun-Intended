@@ -23,13 +23,12 @@
                     <a href="/" class="brand-logo">Pun Intended</a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
+                                <% if session[:id] != nil %>
                         <li><a href="#new_pun" modal-trigger>New Pun</a></li>
                         <li><a href="/category" modal-trigger>Category</a></li>
                         <li>
                             <a>
-                                <% if session[:id] != nil %>
                                 <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Signed In as <%= @user.username %>">perm_identity</i>
-                                <% end %>
                             </a>
                         </li>
                         <li>
@@ -37,15 +36,15 @@
                                 <i name="button" class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Logout">arrow_forward</i>
                             </a>
                         </li>
+                                <% end %>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
+                                <% if session[:id] != nil %>
                         <li><a href="#new_pun" modal-trigger>New Pun</a></li>
                         <li><a href="/category" modal-trigger>Category</a></li>
                         <li>
                             <a>
-                                <% if session[:id] != nil %>
                                 <i class="material-icons">perm_identity</i>Signed In as <%= @user.username %>
-                                <% end %>
                             </a>
                         </li>
                         <li>
@@ -53,6 +52,7 @@
                                 <i name="button" class="material-icons">arrow_forward</i>Logout
                             </a>
                         </li>
+                                <% end %>
                     </ul>
                 </div>
             </div>

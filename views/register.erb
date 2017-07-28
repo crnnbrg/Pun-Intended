@@ -1,19 +1,44 @@
-<div class="row">
+<p class="center-align flow-text default-pun black-text">Never trust an atom, they make up everything!</p>
+<div class="row center home-btns">
   <div class="col s6">
-    <p>Please Log In to view this page</p>
-    <form action="/user/login" method="post">
-      <input type="text" name="username" id="username" placeholder="@username" required="">
-      <input type="password" name="password" id="password" placeholder="password" required="">
-      <button class="btn blue" type="submit" name="button">Log In</button>
-    </form>
+    <a class="waves-effect waves-light btn modal-trigger black" href="#login">login</a>
   </div>
   <div class="col s6">
-    <p>Please Sign Up to view this page</p>
-    <form action="/user/signup" method="post">
-      <input type="text" name="username" id="username" placeholder="@username" required="">
-      <input type="text" name="email" id="email" placeholder="example@example.com" required="">
-      <input type="password" name="password" id="password" placeholder="password" required="">
-      <button class="btn green" type="submit" name="button">Sign Up</button>
-    </form>
+    <a class="waves-effect waves-light btn modal-trigger black" href="#signup">sign up</a>
+  </div>
+</div>
+<!-- Modal Trigger -->
+<!-- Modal Structure -->
+<div id="login" class="modal">
+  <div class="modal-content">
+    <div class="container">
+    <br>
+      <form action="/user/login" method="post">
+        <input type="text" name="username" id="username" placeholder="@username" required="">
+        <input type="password" name="password" id="password" placeholder="password" required="">
+        <button class="btn blue" type="submit" name="button">Log In</button>
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+<!-- Modal Trigger -->
+<!-- Modal Structure -->
+<div id="signup" class="modal">
+  <div class="modal-content">
+    <div class="container">
+    <br>
+      <form action="/user/signup" method="post">
+        <input type="text" name="username" id="username" placeholder="@username" required="">
+        <input type="email" name="email" id="email" placeholder="example@example.com" required="">
+        <input type="password" name="password" id="password" placeholder="password" required="">
+        <button class="btn green" type="submit" name="button">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
   </div>
 </div>

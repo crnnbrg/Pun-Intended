@@ -6,6 +6,10 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+a:focus, a:hover, a {
+	outline: none;
+}
+
 .submit-btn {
     text-align: center;
 }
@@ -50,4 +54,22 @@ nav ul a {
 
 .progress {
     background-color: red;
+}
+
+.home-btns {
+    margin-top: 15%;
+}
+
+.default-pun {
+    margin-top: 12%;
+    font-size: 50px;
+}
+/*
+.chip {
+    float: right;
+}*/
+
+.delete-category {
+	border-color: transparent;
+	border: none;
 }
