@@ -11,14 +11,14 @@
     <% end %>
     <div class="submit-btn">
         <div class="row">
-            <div class="col s4">
+            <div class="col s3">
                 <form action="/puns/<%= pun.id %>/upvote" method="post">
                     <input type="hidden" name="_method" value="patch">
                     <%= pun.upvote %>
                     <button type="submit" class="tooltipped btn-floating btn-large waves-effect waves-light yellow" data-position="top" data-delay="50" data-tooltip="Upvote"><i class="em em-joy"></i></button>
                 </form>
             </div>
-            <div class="col s4">
+            <div class="col s3">
                 <form action="/puns/<%= pun.id %>/downvote" method="post">
                     <input type="hidden" name="_method" value="patch">
                     <%= pun.downvote %>
@@ -26,7 +26,7 @@
                     <i class="em em-angry"></i></button>
                 </form>
             </div>
-            <div class="col s4">
+            <div class="col s3">
                 <form action="/puns/<%= pun.id %>/blonde" method="post">
                     <input type="hidden" name="_method" value="patch">
                     <input type="hidden" name="user_id" id="user_id" value="<%= session[:id] %>">
@@ -34,6 +34,12 @@
                 <button class="tooltipped btn-floating btn-large waves-effect waves-light green" data-position="right" data-delay="50" data-tooltip="Blonde"><i class="em em-confused"></i></a>
                 </button>
             </form>
+        </div>
+        <div class="col s3">
+          <!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
         </div>
     </div>
 </div>
