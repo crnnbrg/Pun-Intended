@@ -1,72 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Pun Intended</title>
-        <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F2016%2F03%2FMeme-Transparent-PNG.png&f=1">
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-        <!-- Custom CSS -->
-        <link rel="stylesheet" type="text/css" href="/css/styles.css">
-        <!--Emoji CSS-->
-        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-      
-    </head>
-    <body>
-        <!--Navigation-->
-        <nav class="indigo">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="/" class="brand-logo">Pun Intended</a>
-                                <% if session[:id] != nil %>
-                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="#new_pun" modal-trigger>New Pun</a></li>
-                        <li><a href="/category" modal-trigger>Category</a></li>
-                        <li>
-                            <a>
+
+<head>
+  <title>Pun Intended</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F2016%2F03%2FMeme-Transparent-PNG.png&f=1">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <!--Emoji CSS-->
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+</head>
+
+<body>
+  <!--Navigation-->
+  <nav class="indigo">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Pun Intended</a>
+        <% if session[:id] != nil %>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#new_pun" modal-trigger>New Pun</a></li>
+            <li><a href="/category" modal-trigger>Category</a></li>
+            <li>
+              <a>
                                 <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="<%= @user.username %>">perm_identity</i>
                             </a>
-                        </li>
-                        <li>
-                            <a href="/user/logout">
+            </li>
+            <li>
+              <a href="/user/logout">
                                 <i name="button" class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Logout">arrow_forward</i>
                             </a>
-                        </li>
-                                <% end %>
-                                <li><a class="a2a_dd" href="https://www.addtoany.com/share"></a></li>
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                                <% if session[:id] != nil %>
-                        <li><a href="#new_pun" modal-trigger>New Pun</a></li>
-                        <li><a href="/category" modal-trigger>Category</a></li>
-                        <li>
-                            <a>
+            </li>
+            <% end %>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <% if session[:id] != nil %>
+              <li><a href="#new_pun" modal-trigger>New Pun</a></li>
+              <li><a href="/category" modal-trigger>Category</a></li>
+              <li>
+                <a>
                                 <i class="material-icons">perm_identity</i><%= @user.username %>
                             </a>
-                        </li>
-                        <li>
-                            <a href="/user/logout">
+              </li>
+              <li>
+                <a href="/user/logout">
                                 <i name="button" class="material-icons">arrow_forward</i>Logout
                             </a>
-                        </li>
-                                <% end %>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="container">
-            <%= yield %>
-        </div>
-        <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-        <script async src="https://static.addtoany.com/menu/page.js"></script>
-        <script src="/js/init.js"></script>
-    </body>
+              </li>
+              <% end %>
+          </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <script type="text/javascript">
+  var a2a_config = a2a_config || {};
+  a2a_config.linkname = 'Pun Intended';
+  a2a_config.linkurl = 'http://mspun.herokuapp.com/';
+  a2a_config.num_services = 10;
+  a2a_config.show_title = 1;
+  </script>
+  <script async src="//static.addtoany.com/menu/page.js"></script>
+  <script src="/js/init.js"></script>
+</body>
+
 </html>

@@ -2,43 +2,46 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
 body {
-    font-size: 16px;
-    font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
 }
 
-a:focus, a:hover, a {
-    outline: none;
+a:focus,
+a:hover,
+a {
+  outline: none;
 }
 
 .submit-btn {
-    text-align: center;
+  text-align: center;
 }
 
 .input-field {
-    width: 65%;
-    margin: auto;
+  width: 65%;
+  margin: auto;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .pun-container {
-    margin-bottom: 30%;
-    margin-top: 15%;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  overflow: hidden;
 }
 
 .menu-btn {
-    display: inline-block;
+  display: inline-block;
 }
 
 .center-page {
-    margin-top: 22%;
+  margin-top: 22%;
 }
 
 select {
-    width: 65%;
-    margin: auto;
+  width: 65%;
+  margin: auto;
 }
 
 h1,
@@ -49,31 +52,34 @@ h5,
 h5,
 nav .brand-logo,
 nav ul a {
-    font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .progress {
-    background-color: red;
+  background-color: red;
 }
 
 .home-btns {
-    margin-top: 10%;
+  margin-top: 10%;
 }
 
 .default-pun {
-    margin-top: 12%;
-    font-size: 50px;
+  margin-top: 12%;
+  font-size: 50px;
 }
 
 .delete-category {
-    border-color: transparent;
-    border: none;
+  border-color: transparent;
+  border: none;
 }
 
 .full {
-    overflow:hidden;
-    position:absolute; left:0; width:100%; min-height:89.5%;
-      background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://static.pexels.com/photos/508577/pexels-photo-508577.jpeg) no-repeat center center fixed;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-height: 89.5%;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://static.pexels.com/photos/508577/pexels-photo-508577.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -81,5 +87,5 @@ nav ul a {
 }
 
 .margin-top {
-    margin-top: 22%;
+  margin-top: 22%;
 }
