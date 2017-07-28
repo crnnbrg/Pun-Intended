@@ -47,6 +47,17 @@ get '/user/logout' do
 end
 
 post '/puns' do
+  if session[:id] != nil
+    @user = User.find(session[:id])
+    if session[:id] == @user.id
+      @user = User.find(session[:id])
+      @puns = Pun.all
+      @categories = Category.all
+      erb(:index)
+    end
+  else
+    erb(:register)
+  end
   user = User.find(params.fetch('user_id').to_i)
   @pun = Pun.new(pun: params.fetch('pun_body'), category_id: params.fetch('category_id'), user_id: user.id)
   if @pun.save

@@ -36,23 +36,23 @@
     <div class="modal-content">
         <a class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
         <h4 class="center-align">New Pun</h4>
-        <input type="hidden" name="user_id" id="user_id" value="<%= @user.id %>">
-        <select id="category_id" name="category_id" type="text" class="browser-default">
-            <% @categories.each do |category| %>
-            <%= category.id()%>">
-            <%= category.category %>
-        </option>
-        <% end %>
-    </select>
-    <br>
-    <div class="input-field">
-        <label>Pun Body</label>
-        <input type="text" name="pun_body" id="pun_body" required>
-    </div>
-    <div class="submit-btn">
         <form action="/puns" method="post">
-            <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+            <input type="hidden" name="user_id" id="user_id" value="<%= @user.id %>">
+            <select id="category_id" name="category_id" type="text" class="browser-default">
+                <% @categories.each do |category| %>
+                <option value="<%= category.id()%>">
+                    <%= category.category %>
+                </option>
+                <% end %>
+            </select>
+            <br>
+            <div class="input-field">
+                <label>Pun Body</label>
+                <input type="text" name="pun_body" id="pun_body" required>
+            </div>
+            <div class="submit-btn">
+                <form action="/puns" method="post">
+                    <button class="btn indigo waves-effect waves-light black" type="submit">Submit</button>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
-</div>
