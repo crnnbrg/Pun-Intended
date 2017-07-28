@@ -1,5 +1,4 @@
 <% if @puns.any? %>
-<h3 class="center-align teal-text">Code related puns</h3>
 <% @puns.reverse.each do |pun| %>
 <li>
     <div class="container pun-container">
@@ -7,7 +6,7 @@
         <a href="/puns/<%=pun.id%>" class="black-text"><h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3>
     </a>
     <% else %>
-    <h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3>
+    <p class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></p>
     <% end %>
     <div class="submit-btn">
         <div class="row">
