@@ -1,21 +1,13 @@
 <% @categories.each do |category| %>
 <li>
-	<!--   <div class="container category-container">
-		<a href="/categories/<%=category.id%>" class="black-text"><h3 class="center-align"><%=category.category %></h3></a>
+	  <div class="container category-container">
+		<a href="/categories/<%=category.id%>" class="black-text"><p class="flow-text"><%=category.category %></p></a>
 		</h1>
-	</li> -->
-	<!--      <div class="chip">
-		<%=category.category %>
-		<i class="close material-icons">close</i>
-	</div> -->
-	<br>
-	<div class="chip">
-		<%=category.category %>
 		<form action="/categories/<%=category.id%>" method="post" class="menu-btn">
 			<input type="hidden" name="_method" value="delete">
-			<button class="btn-floating transparent tooltipped delete-category" data-position="bottom" data-delay="50" data-tooltip="Delete" type="submit"><i class="material-icons">delete_forever</i></button>
-		</div>
+			<button class="btn-floating red tooltipped delete-category" data-position="left" data-delay="50" data-tooltip="Delete" type="submit"><i class="material-icons">delete_forever</i></button>
 	</form>
+	</li>
 	<% end %>
 	<!-- Add Category Modal -->
 	<div id="new_category" class="modal">

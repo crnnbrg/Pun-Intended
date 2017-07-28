@@ -4,10 +4,11 @@
 body {
     font-size: 16px;
     font-family: 'Oswald', sans-serif;
+    overflow:hidden;
 }
 
 a:focus, a:hover, a {
-	outline: none;
+    outline: none;
 }
 
 .submit-btn {
@@ -57,7 +58,7 @@ nav ul a {
 }
 
 .home-btns {
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 .default-pun {
@@ -70,6 +71,15 @@ nav ul a {
 }*/
 
 .delete-category {
-	border-color: transparent;
-	border: none;
+    border-color: transparent;
+    border: none;
+}
+
+.full {
+    position:absolute; left:0; width:100%; min-height:89.5%;
+      background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://static.pexels.com/photos/508577/pexels-photo-508577.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
