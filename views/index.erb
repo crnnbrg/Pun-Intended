@@ -1,5 +1,4 @@
 <% if @puns.any? %>
-<h3 class="center-align teal-text">Code related puns</h3>
 <% @puns.reverse.each do |pun| %>
 <li>
     <div class="container pun-container">
@@ -7,23 +6,24 @@
         <a href="/puns/<%=pun.id%>" class="black-text"><h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3>
     </a>
     <% else %>
-    <h3 class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></h3>
+    <p class="center-align"><%= pun.pun %> <a href="#">@<%= User.find(pun.user_id).username %></a></p>
     <% end %>
+    <br>
     <div class="submit-btn">
         <div class="row">
             <div class="col s3">
                 <form action="/puns/<%= pun.id %>/upvote" method="post">
                     <input type="hidden" name="_method" value="patch">
                     <%= pun.upvote %>
-                    <button type="submit" class="tooltipped btn-floating btn-large waves-effect waves-light yellow" data-position="top" data-delay="50" data-tooltip="Upvote"><i class="em em-joy"></i></button>
+                    <button type="submit" class="tooltipped btn-floating btn-large waves-effect waves-light green" data-position="top" data-delay="50" data-tooltip="Upvote"><i class="material-icons">thumb_up</i></button>
                 </form>
             </div>
             <div class="col s3">
                 <form action="/puns/<%= pun.id %>/downvote" method="post">
                     <input type="hidden" name="_method" value="patch">
                     <%= pun.downvote %>
-                    <button class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="bottom" data-delay="50" data-tooltip="Downvote">
-                    <i class="em em-angry"></i></button>
+                    <button class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="down" data-delay="50" data-tooltip="Downvote">
+                    <i class="material-icons">thumb_down</i></button>
                 </form>
             </div>
             <div class="col s3">
@@ -31,7 +31,7 @@
                     <input type="hidden" name="_method" value="patch">
                     <input type="hidden" name="user_id" id="user_id" value="<%= session[:id] %>">
                     <%= pun.blonde %>
-                <button class="tooltipped btn-floating btn-large waves-effect waves-light green" data-position="right" data-delay="50" data-tooltip="Blonde"><i class="em em-confused"></i></a>
+                <button class="tooltipped btn-floating btn-large waves-effect waves-light white black-text" data-position="top" data-delay="50" data-tooltip="Blonde">!?</a>
                 </button>
             </form>
         </div>
@@ -43,6 +43,7 @@
         </div>
     </div>
 </div>
+<br>
 <div class="progress">
     <% score = (pun.upvote.to_f / (pun.upvote.to_f + pun.downvote.to_f) * 100) %>
     <div class="determinate" style="width: <%= score %>%"></div>

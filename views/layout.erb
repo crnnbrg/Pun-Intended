@@ -22,14 +22,14 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <a href="/" class="brand-logo">Pun Intended</a>
+                                <% if session[:id] != nil %>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                                <% if session[:id] != nil %>
                         <li><a href="#new_pun" modal-trigger>New Pun</a></li>
                         <li><a href="/category" modal-trigger>Category</a></li>
                         <li>
                             <a>
-                                <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Signed In as <%= @user.username %>">perm_identity</i>
+                                <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="<%= @user.username %>">perm_identity</i>
                             </a>
                         </li>
                         <li>
@@ -46,7 +46,7 @@
                         <li><a href="/category" modal-trigger>Category</a></li>
                         <li>
                             <a>
-                                <i class="material-icons">perm_identity</i>Signed In as <%= @user.username %>
+                                <i class="material-icons">perm_identity</i><%= @user.username %>
                             </a>
                         </li>
                         <li>
