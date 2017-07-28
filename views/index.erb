@@ -22,7 +22,7 @@
                 <form action="/puns/<%= pun.id %>/downvote" method="post">
                     <input type="hidden" name="_method" value="patch">
                     <%= pun.downvote %>
-                    <button class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="top" data-delay="50" data-tooltip="Downvote">
+                    <button class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="down" data-delay="50" data-tooltip="Downvote">
                     <i class="material-icons">thumb_down</i></button>
                 </form>
             </div>
