@@ -1,6 +1,6 @@
 <% @categories.each do |category| %>
 <li>
-	  <div class="container category-container">
+	  <div class="category-container">
 		<a href="/categories/<%=category.id%>" class="black-text"><p class="flow-text"><%=category.category %></p></a>
 		</h1>
 		<form action="/categories/<%=category.id%>" method="post" class="menu-btn">
