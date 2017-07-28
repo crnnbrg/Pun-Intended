@@ -24,8 +24,8 @@ li {
 }
 
 .pun-container {
-    margin-bottom: 50%;
-    margin-top: 20%;
+    margin-bottom: 30%;
+    margin-top: 15%;
 }
 
 .menu-btn {
@@ -64,10 +64,6 @@ nav ul a {
     margin-top: 12%;
     font-size: 50px;
 }
-/*
-.chip {
-    float: right;
-}*/
 
 .delete-category {
     border-color: transparent;

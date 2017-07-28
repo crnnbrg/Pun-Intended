@@ -6,7 +6,6 @@
             <%=@category.category %>
         </div>
     </div>
-    <hr>
     <h1 class="center-align"><%=@pun.pun%></h1>
     <form action="/puns/<%= @pun.id %>" method="post" class="menu-btn">
         <input type="hidden" name="_method" value="delete">
