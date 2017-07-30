@@ -1,6 +1,6 @@
 # Pun Intended
 
-A CRUD application featuring programming related puns. :insert frying-pan:
+A CRUD application featuring our favorite puns. :insert frying-pan:
 
 [view deployed](https://mspun.herokuapp.com/)
 
